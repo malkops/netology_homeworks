@@ -48,8 +48,8 @@ class Bird(Animal):
         Собрать яйца
         :return: None
         """
-      super().collect()
-      print('Мои яйци собраны')
+        super().collect()
+        print('Мои яйци собраны')
 
 
 class Milking(Animal):
@@ -64,8 +64,8 @@ class Milking(Animal):
         Подоить
         :return: None
         """
-      super().collect()
-      print('Меня подоили')
+        super().collect()
+        print('Меня подоили')
 
 
 class Cow(Milking):
@@ -99,8 +99,8 @@ class Sheep(Animal):
         Подстричь
         :return: None
         """
-      super().collect()
-      print('Меня подстригли. Теперь я лысый!!!')
+        super().collect()
+        print('Меня подстригли. Теперь я лысый!!!')
 
 
 class Goose(Bird):
