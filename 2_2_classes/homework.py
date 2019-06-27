@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+
+
 class Animal(ABC):
     """
     Главный класс животное
@@ -33,7 +35,6 @@ class Animal(ABC):
         :return: None
         """
         print(self.name, end=': ')
-
 
 
 class Bird(Animal):

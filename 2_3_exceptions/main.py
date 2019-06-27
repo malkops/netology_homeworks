@@ -2,29 +2,31 @@ def main():
     try:
         operation, first_num, second_num = input('Введите выражение: ').split()
     except ValueError as e:
-        print(f'Было введено больше одной цифры ({e})')
-        return None
+        return f'Было введено больше одной цифры ({e})'
 
     assert operation in ['*', '+', '-', '/'], ('Неизвестная операция')
 
-    first_num = float(first_num)
-    second_num = float(second_num)
+    try:
+        first_num = float(first_num)
+        second_num = float(second_num)
+    except ValueError as e:
+        return f'Были введены не цифры ({e})'
 
     try:
         if operation == '+':
-            print(f'Результат: {first_num + second_num}')
+            result = first_num + second_num
         elif operation == '-':
-            print(f'Результат: {first_num - second_num}')
+            result = first_num - second_num
         elif operation == '*':
-            print(f'Результат: {first_num * second_num}')
+            result = first_num * second_num
         elif operation == '/':
-            print(f'Результат: {first_num / second_num}')
+            result = first_num / second_num
     except ZeroDivisionError as e:
-        print(f'Деление на ноль запрещено ({e})')
-        return None
+        return f'Деление на ноль запрещено ({e})'
     except ValueError as e:
-        print(f'Была введена не цифра ({e})')
-        return None
+        return f'Была введена не цифра ({e})'
+
+    return f'Результат: {result}'
 
 
 main()
