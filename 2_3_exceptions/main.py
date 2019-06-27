@@ -29,4 +29,4 @@ def main():
     return f'Результат: {result}'
 
 
-main()
+print(main())
