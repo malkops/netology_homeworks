@@ -40,7 +40,7 @@ class User:
             params=params
         )
 
-        return set(self.get_list_friends()) & set(response.json()['response'])
+        return response.json()['response']
 
     def __and__(self, other):
         mutual_users = self.get_mutual_friends(other)
@@ -51,5 +51,6 @@ class User:
 if __name__ == '__main__':
     user1 = User('179741620')
     user2 = User('378209621')
-    for us in user1 & user2:
+    mutual = user1 & user2
+    for us in mutual:
         print(us.user_id)
