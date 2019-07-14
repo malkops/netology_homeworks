@@ -31,13 +31,24 @@ class User:
 
         return response.json()['response']['items']
 
+    def get_mutual_friends(self, user):
+        params = self.get_params()
+        params['source_uid'] = self.user_id
+        params['target_uid'] = user.user_id
+        response = requests.get(
+            'https://api.vk.com/method/friends.getMutual',
+            params=params
+        )
+
+        return set(self.get_list_friends()) & set(response.json()['response'])
+
     def __and__(self, other):
-        mutual_users = set(self.get_list_friends()) & set(other.get_list_friends()[1:6])
+        mutual_users = self.get_mutual_friends(other)
 
         return [User(i) for i in mutual_users]
 
 
-user1 = User('malkovmatvey')
-user2 = User('malkovmatvey')
+user1 = User('179741620')
+user2 = User('378209621')
 for us in user1 & user2:
     print(us.user_id)
