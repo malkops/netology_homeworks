@@ -34,10 +34,10 @@ class User:
     def __and__(self, other):
         mutual_users = set(self.get_list_friends()) & set(other.get_list_friends()[1:6])
 
-        return [User(i).user_id for i in mutual_users]
+        return [User(i) for i in mutual_users]
 
 
 user1 = User('malkovmatvey')
 user2 = User('malkovmatvey')
-print(user1 & user2)
-
+for us in user1 & user2:
+    print(us.user_id)
