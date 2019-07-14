@@ -48,7 +48,8 @@ class User:
         return [User(i) for i in mutual_users]
 
 
-user1 = User('179741620')
-user2 = User('378209621')
-for us in user1 & user2:
-    print(us.user_id)
+if __name__ == '__main__':
+    user1 = User('179741620')
+    user2 = User('378209621')
+    for us in user1 & user2:
+        print(us.user_id)
