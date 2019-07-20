@@ -59,6 +59,7 @@ class User:
             'https://api.vk.com/method/groups.get',
             params=params
         )
+        print('.', end='')
 
         return response.json()['response']['items']
 
@@ -75,6 +76,7 @@ class User:
             'https://api.vk.com/method/groups.getMembers',
             params=params
         )
+        print('.', end='')
 
         return response.json()['response']
 
