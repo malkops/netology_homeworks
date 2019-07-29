@@ -1,5 +1,6 @@
 import json
 import requests
+import time
 TOKEN = '73eaea320bdc0d3299faa475c196cfea1c4df9da4c6d291633f9fe8f83c08c4de2a3abf89fbc3ed8a44e1'
 
 
@@ -16,11 +17,16 @@ class User:
 
         return f"https://vk.com/{response.json()['response'][0]['id']}"
 
+    def __and__(self, other):
+        mutual_users = self.get_mutual_friends(other)
+
+        return [User(i) for i in mutual_users]
+
     def get_params(self):
         return {
             'access_token': TOKEN,
             'v': '5.89',
-            'user_ids': self.user_id,
+            'user_id': self.user_id,
         }
 
     def get_list_friends(self):
@@ -43,11 +49,6 @@ class User:
 
         return response.json()['response']
 
-    def __and__(self, other):
-        mutual_users = self.get_mutual_friends(other)
-
-        return [User(i) for i in mutual_users]
-
     def get_list_groups(self):
         """
         Метод возвращает список всех групп пользователя
@@ -55,12 +56,17 @@ class User:
         """
         params = self.get_params()
         params['extended'] = 1
+        time.sleep(1)
         response = requests.get(
             'https://api.vk.com/method/groups.get',
             params=params
         )
         print('.', end='')
 
+        try:
+            response.json()['response']['items']
+        except Exception:
+            return set()
         return response.json()['response']['items']
 
     def get_group_members(self, group):
@@ -71,14 +77,13 @@ class User:
         """
         params = self.get_params()
         params['group_id'] = group
-        params['filter'] = 'friends'
         response = requests.get(
             'https://api.vk.com/method/groups.getMembers',
             params=params
         )
         print('.', end='')
 
-        return response.json()['response']
+        return response.json()['response']['count']
 
     def find_solo_groups(self, groups):
         """
@@ -86,24 +91,34 @@ class User:
         :param groups:
         :return:
         """
-        group_solo_list = []
-        for group in groups:
-            group_response = self.get_group_members(group['id'])
+        user_groups = {x['id'] for x in groups}
+        friends_list = set(self.get_list_friends())
 
-            if not group_response['items']:
+        temp_friends_list = [User(x) for x in friends_list]
+        all_groups = set()
+        for user in temp_friends_list:
+            friend_groups = {x['id'] for x in user.get_list_groups()}
+            if friend_groups:
+                all_groups.update(friend_groups)
+        user_groups = user_groups.difference(all_groups)
+        result = []
+        for group in groups:
+            group_id = group['id']
+            if group_id in user_groups:
+                members_count = self.get_group_members(group_id)
                 temp = {
                     'name': group['name'],
-                    'gid': group['id'],
-                    'members_count': group_response['count'],
+                    'gid': group_id,
+                    'members_count': members_count,
                 }
-
-                group_solo_list.append(temp)
+                result.append(temp)
 
         with open('groups.json', 'w+t', encoding='utf-8') as f:
-            json.dump(group_solo_list, f, ensure_ascii=False)
+            json.dump(result, f, ensure_ascii=False)
 
 
 if __name__ == '__main__':
-    # user1 = User('179741620')
-    user = User('171691064')
+    user_id = input('Введите id пользователя: ')
+    user = User(user_id)
     user.find_solo_groups(user.get_list_groups())
+    print('\nJson записан в файл. На этом все :)')
