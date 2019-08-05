@@ -25,7 +25,7 @@ class User:
     def get_params(self):
         return {
             'access_token': TOKEN,
-            'v': '5.89',
+            'v': '5.101',
             'user_id': self.user_id,
         }
 
@@ -117,8 +117,25 @@ class User:
             json.dump(result, f, ensure_ascii=False)
 
 
+def resolve_name(user_id):
+    response = requests.get(
+        'https://api.vk.com/method/utils.resolveScreenName',
+        params={
+            'screen_name': user_id,
+            'access_token': TOKEN,
+            'v': '5.101'
+        }
+    )
+    if not response.json()['response']:
+        numbering_user_id = user_id
+    else:
+        numbering_user_id = response.json()['response']['object_id']
+
+    return numbering_user_id
+
+
 if __name__ == '__main__':
     user_id = input('Введите id пользователя: ')
-    user = User(user_id)
+    user = User(resolve_name(user_id))
     user.find_solo_groups(user.get_list_groups())
     print('\nJson записан в файл. На этом все :)')
