@@ -12,3 +12,8 @@
 1. [Домашка про классы на API VK (3.3)](https://github.com/guillotine666/netology_homeworks/tree/master/3_3_apivk)
 #### Simple python diploma
 1. [Дипломная работа по простому python](https://github.com/guillotine666/netology_homeworks/tree/master/simple_diploma)
+## Advanced python
+#### Professional work with python
+1. [Домашка про Import, Module, Package (1.1)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/1_1_import_module_package)
+1. [Домашка про Iterators, Generator, Yield (1.2)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/)
+#### Python on practice
