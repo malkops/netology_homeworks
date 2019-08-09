@@ -64,10 +64,9 @@ class User:
         print('.', end='')
 
         try:
-            response.json()['response']['items']
-        except Exception:
+            return response.json()['response']['items']
+        except KeyError:
             return set()
-        return response.json()['response']['items']
 
     def get_group_members(self, group):
         """
@@ -83,7 +82,10 @@ class User:
         )
         print('.', end='')
 
-        return response.json()['response']['count']
+        try:
+            return response.json()['response']['count']
+        except KeyError:
+            return 0
 
     def find_solo_groups(self, groups):
         """
@@ -91,6 +93,12 @@ class User:
         :param groups:
         :return:
         """
+        if not len(groups):
+            with open('groups.json', 'w', encoding='utf-8') as f:
+                f.write('')
+            print('\nВ файл нечего записывать. Что-то не так спользователем.')
+            return
+
         user_groups = {x['id'] for x in groups}
         friends_list = set(self.get_list_friends())
 
@@ -115,6 +123,7 @@ class User:
 
         with open('groups.json', 'w+t', encoding='utf-8') as f:
             json.dump(result, f, ensure_ascii=False)
+        print('\nJson записан в файл. На этом все :)')
 
 
 def resolve_name(user_id):
@@ -138,4 +147,3 @@ if __name__ == '__main__':
     user_id = input('Введите id пользователя: ')
     user = User(resolve_name(user_id))
     user.find_solo_groups(user.get_list_groups())
-    print('\nJson записан в файл. На этом все :)')
