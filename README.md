@@ -17,4 +17,6 @@
 1. [Домашка про Import, Module, Package (1.1)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/import_module_package)
 1. [Домашка про Iterators, Generator, Yield (1.2)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/iterators)
 1. [Домашка про Decorators (1.3)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/decorators)
+1. [Домашка про Decorators (1.4)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/function2)
+1. [Домашка про Decorators (1.5)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/PEP8)
 #### Python on practice
