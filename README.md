@@ -19,5 +19,6 @@
 1. [Домашка про Decorators (1.3)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/decorators)
 1. [Домашка про Function 2.0 (1.4)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/function2)
 1. [Домашка про PEP8 (1.5)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/PEP8)
-1. [Домашка про Tests (1.6)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/tests)
 #### Python on practice
+1. [Домашка про Tests (2.1)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/tests)
+1. [Домашка про RegEx (2.2)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/regex)
