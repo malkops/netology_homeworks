@@ -34,7 +34,7 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(check_document_existence('2207 876234'))
 
     def test_check_document_existence_failed(self):
-        self.assertTrue(check_document_existence('1337'))
+        self.assertFalse(check_document_existence('1337'))
 
     def test_append_doc_to_shelf(self):
         using_shelf = self.test_shelf_number

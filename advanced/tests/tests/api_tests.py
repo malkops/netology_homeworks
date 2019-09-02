@@ -23,7 +23,7 @@ class YandexTranslateTestCase(unittest.TestCase):
 
     def test_url_available_failed(self):
         res_code = self.translate_dict['code']
-        self.assertTrue((res_code < 200 or res_code >= 300))
+        self.assertFalse((res_code < 200 or res_code >= 300))
 
     def test_translated_text(self):
         translated_text = set(self.translate_dict['text'])
