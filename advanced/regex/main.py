@@ -29,12 +29,12 @@ def get_fio(text):
 def get_phone(text):
     if not text:
         return text
-    pure_number = re.sub(r"\D", "", text)
-    if len(pure_number) == 11:
-        res = f"+7({pure_number[1:4]}){pure_number[4:7]}-{pure_number[7:9]}-{pure_number[9:]}"
-    else:
-        res = f"+7({pure_number[1:4]}){pure_number[4:7]}-" \
-              f"{pure_number[7:9]}-{pure_number[9:11]} доб.{pure_number[11:]}"
+    number_by_groups = re.match(r"(\+7|8)\s*\D*\(*(\d{3,5})\)*\s*\D*(\d{3})\D*(\d{2})\D*(\d{2})\s*\D*(\d*)", text)
+    res = f"{'+7' if number_by_groups.group(1) == '+7' else '8'}({number_by_groups.group(2)})" \
+          f"{number_by_groups.group(3)}-" \
+          f"{number_by_groups.group(4)}-" \
+          f"{number_by_groups.group(5)}{' доб. '+ number_by_groups.group(6) if number_by_groups.group(6) else ''}"
+
     return res
 
 
