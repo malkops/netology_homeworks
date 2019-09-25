@@ -25,5 +25,5 @@
 1. [Домашка про PostgreSQL (2.3)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/DB_postgresql)
 1. [Домашка про MongoDB (2.4)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/DB_mongo)
 1. [Домашка про Data analysis (2.5)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/data_analysis/first_step)
-#### Simple python diploma
+#### Advanced python diploma
 1. [Дипломная работа по углубленному python](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/diploma)
