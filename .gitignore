@@ -1,6 +1,123 @@
 
-# Created by https://www.gitignore.io/api/python,pycharm,jupyternotebooks
-# Edit at https://www.gitignore.io/?templates=python,pycharm,jupyternotebooks
+# Created by https://www.gitignore.io/api/python,django,pycharm,jupyternotebooks
+# Edit at https://www.gitignore.io/?templates=python,django,pycharm,jupyternotebooks
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
+# in your Git repository. Update and uncomment the following line accordingly.
+# <django-project-name>/staticfiles/
+
+### Django.Python Stack ###
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# pyenv
+.python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
 
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
@@ -9,9 +126,12 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
+# IPython
+profile_default/
+ipython_config.py
+
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
-#
 
 ### PyCharm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
@@ -92,131 +212,77 @@ fabric.properties
 # *.ipr
 
 # Sonarlint plugin
-.idea/sonarlint
+.idea/**/sonarlint/
+
+# SonarQube Plugin
+.idea/**/sonarIssues.xml
+
+# Markdown Navigator plugin
+.idea/**/markdown-navigator.xml
+.idea/**/markdown-navigator/
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
 
 # C extensions
-*.so
 
 # Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
 
 # Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
 
 # Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
 
 # Scrapy stuff:
-.scrapy
 
 # Sphinx documentation
-docs/_build/
 
 # PyBuilder
-target/
-
-# Jupyter Notebook
-
-# IPython
-profile_default/
-ipython_config.py
 
 # pyenv
-.python-version
 
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
 #   having no cross-platform support, pipenv may install dependencies that don't work, or not
 #   install all needed dependencies.
-#Pipfile.lock
 
 # celery beat schedule file
-celerybeat-schedule
 
 # SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
 
 # Spyder project settings
-.spyderproject
-.spyproject
 
 # Rope project settings
-.ropeproject
+
+# Mr Developer
 
 # mkdocs documentation
-/site
 
 # mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
 
 # Pyre type checker
-.pyre/
 
-# End of https://www.gitignore.io/api/python,pycharm,jupyternotebooks
+# End of https://www.gitignore.io/api/python,django,pycharm,jupyternotebooks
+django_learning/django_apps/Include/
+django_learning/django_apps/Scripts/Activate.ps1
+django_learning/django_apps/Scripts/activate
+django_learning/django_apps/Scripts/activate.bat
+django_learning/django_apps/Scripts/deactivate.bat
+django_learning/django_apps/Scripts/django-admin.exe
+django_learning/django_apps/Scripts/django-admin.py
+django_learning/django_apps/Scripts/easy_install-3.7.exe
+django_learning/django_apps/Scripts/easy_install.exe
+django_learning/django_apps/Scripts/pip.exe
+django_learning/django_apps/Scripts/pip3.7.exe
+django_learning/django_apps/Scripts/pip3.exe
+django_learning/django_apps/Scripts/python.exe
+django_learning/django_apps/Scripts/pythonw.exe
+django_learning/django_apps/Scripts/sqlformat.exe
+django_learning/django_apps/pyvenv.cfg
+django_learning/first_project/first_project/secret.txt

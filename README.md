@@ -27,3 +27,6 @@
 1. [Домашка про Data analysis (2.5)](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/data_analysis/first_step)
 #### Advanced python diploma
 1. [Дипломная работа по углубленному python](https://github.com/guillotine666/netology_homeworks/tree/master/advanced/diploma)
+## Django
+#### Requsets and templates
+1. [Домашка про запуск проекта](https://github.com/guillotine666/netology_homeworks/tree/master/django_learning/first_project)
