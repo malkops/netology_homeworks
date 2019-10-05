@@ -30,3 +30,4 @@
 ## Django
 #### Requsets and templates
 1. [Домашка про запуск проекта](https://github.com/guillotine666/netology_homeworks/tree/master/django_learning/first_project)
+1. [Домашка про запросы](https://github.com/guillotine666/dj-homeworks/tree/master/request-handling)
