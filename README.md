@@ -8,7 +8,7 @@
 1. [Домашка про менеджер контекста (2.5)](https://github.com/guillotine666/netology_homeworks/tree/master/simple/2_5_context_manager)
 1. [Домашка про разные форматы (3.1)](https://github.com/guillotine666/netology_homeworks/tree/master/simple/3_1_diff_format)
 #### Work with API
-1. [Домашка про request и http-запросы (3.2)](https://github.com/guillotine666/netology_homeworks/tree/master/3simple/_2_requests_http)
+1. [Домашка про request и http-запросы (3.2)](https://github.com/guillotine666/netology_homeworks/tree/master/simple/3_2_requests_http)
 1. [Домашка про классы на API VK (3.3)](https://github.com/guillotine666/netology_homeworks/tree/master/simple/3_3_apivk)
 #### Simple python diploma
 1. [Дипломная работа по простому python](https://github.com/guillotine666/netology_homeworks/tree/master/simple/simple_diploma)
